@@ -1209,3 +1209,30 @@ Stack trace:
 #4 {main}
 REQUEST_URI=/index.php/my/one
 ---
+2017/10/30 13:16:57 [error] [exception.CException] CException: В классе MyController и его поведениях не найден метод или замыкание с именем "actiontwo". in /var/www/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/framework/web/actions/CInlineAction.php(49): CComponent->__call('actiontwo', Array)
+#1 /var/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#2 /var/www/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#3 /var/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 /var/www/framework/web/CWebApplication.php(282): CController->run('two')
+#5 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('my/two')
+#6 /var/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#7 /var/www/html/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/index.php/my/two
+---
+2017/10/30 13:17:16 [error] [exception.CException] CException: В классе MyController и его поведениях не найден метод или замыкание с именем "one". in /var/www/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/html/protected/controllers/MyController.php(11): CComponent->__call('one', Array)
+#1 /var/www/framework/web/actions/CInlineAction.php(49): MyController->actionOne()
+#2 /var/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /var/www/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /var/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/framework/web/CWebApplication.php(282): CController->run('one')
+#6 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('my/one')
+#7 /var/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#8 /var/www/html/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php/my/one
+---
