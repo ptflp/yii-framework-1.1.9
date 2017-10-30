@@ -1101,3 +1101,24 @@ Stack trace:
 REQUEST_URI=/index.php?r=gii/model/index
 HTTP_REFERER=http://localhost/index.php?r=gii/default/index
 ---
+2017/10/30 04:41:06 [error] [exception.CHttpException.403] CHttpException: You are not allowed to access this page. in /var/www/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /var/www/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(ModelGenerator), Object(CInlineAction))
+#1 /var/www/framework/web/CWebApplication.php(282): CController->run('index')
+#2 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/model/index')
+#3 /var/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=gii/model/index
+HTTP_REFERER=http://localhost:8081/index.php?r=gii/model/index
+---
+2017/10/30 04:41:10 [error] [exception.CHttpException.403] CHttpException: You are not allowed to access this page. in /var/www/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /var/www/framework/web/CController.php(263): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /var/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=gii
+---
