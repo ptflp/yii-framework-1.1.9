@@ -1,6 +1,9 @@
 RewriteEngine on
-# if a directory or a file exists, use it directly 
-RewriteCond %{REQUEST_FILENAME} !-f 
+
+# не позволять httpd отдавать файлы, начинающиеся с точки (.htaccess, .svn, .git и прочие)
+RedirectMatch 403 /\..*$
+# если директория или файл существуют, использовать их напрямую
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-# otherwise forward it to index.php 
-RewriteRule . index.php
+# иначе отправлять запрос на файл index.php
+RewriteRule ^.*$ index.php
