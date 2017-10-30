@@ -9,5 +9,5 @@ return array(
 	'username' => 'root',
 	'password' => 'root',
 	'charset' => 'utf8',
-	
+	'tablePrefix'=>'o_'
 );
