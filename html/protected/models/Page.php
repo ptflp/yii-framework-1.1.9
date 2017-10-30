@@ -52,8 +52,8 @@ class Page extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
-			'text' => 'Text',
+			'title' => 'Заголовок',
+			'text' => 'Текст',
 		);
 	}
 
