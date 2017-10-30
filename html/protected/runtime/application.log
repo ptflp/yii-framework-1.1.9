@@ -1192,3 +1192,20 @@ Stack trace:
 REQUEST_URI=/index.php?r=site/contact
 HTTP_REFERER=http://localhost:8081/index.php
 ---
+2017/10/30 13:04:15 [error] [exception.CHttpException.404] CHttpException: Невозможно обработать запрос "my/one". in /var/www/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('my/one')
+#1 /var/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php/my/one
+---
+2017/10/30 13:05:14 [error] [exception.ParseError] ParseError: syntax error, unexpected ')', expecting variable (T_VARIABLE) in /var/www/html/protected/controllers/MyController.php:8
+Stack trace:
+#0 /var/www/framework/web/CWebApplication.php(276): CWebApplication->createController('one/')
+#1 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('my/one')
+#2 /var/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#3 /var/www/html/index.php(13): CApplication->run()
+#4 {main}
+REQUEST_URI=/index.php/my/one
+---
