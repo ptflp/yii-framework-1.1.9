@@ -1122,3 +1122,11 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/index.php?r=gii
 ---
+2017/10/30 05:15:12 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "test". in /var/www/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('test')
+#1 /var/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=test
+---

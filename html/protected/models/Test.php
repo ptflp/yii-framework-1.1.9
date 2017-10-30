@@ -29,7 +29,7 @@ class Test extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('title, predetail, detail, img', 'required'),
-			array('title, predetail, detail, img', 'length', 'max'=>1),
+			array('title, predetail, detail, img', 'length', 'max'=>120),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, title, predetail, detail, img', 'safe', 'on'=>'search'),
