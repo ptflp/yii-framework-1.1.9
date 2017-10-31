@@ -1,4 +1,5 @@
 <?php
+/*
 foreach ($models as $model) {
 	$title = CHtml::encode($model->title);
 	echo CHtml::link(
@@ -8,4 +9,6 @@ foreach ($models as $model) {
 	);
 	echo CHtml::normalizeUrl(array('page/view', 'id'=>$model->id));
 	echo '<hr/>';
-}
+}*/
+
+$this->renderPartial('/part/_part', array('models' => $models));
