@@ -1,2 +1,3 @@
 
 html/protected/runtime/application.log
+*.log
