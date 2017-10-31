@@ -17,7 +17,7 @@ $this->menu=array(
 ?>
 
 <h1>View Page #<?php echo $model->id; ?></h1>
-
+// Табличная Вьюха показывает детэйл 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
