@@ -1526,3 +1526,20 @@ Stack trace:
 #4 {main}
 REQUEST_URI=/index.php/Book/
 ---
+2017/10/31 05:51:46 [error] [php] Undefined variable: arr (/var/www/html/protected/views/book/index.php:5)
+Stack trace:
+#0 /var/www/framework/web/CController.php(872): BookController->renderFile()
+#1 /var/www/framework/web/CController.php(785): BookController->renderPartial()
+#2 /var/www/html/protected/controllers/BookController.php(14): BookController->render()
+#3 /var/www/framework/web/actions/CInlineAction.php(49): BookController->actionIndex()
+#4 /var/www/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/framework/web/CController.php(286): BookController->runAction()
+#6 /var/www/framework/web/CController.php(265): BookController->runActionWithFilters()
+#7 /var/www/framework/web/CWebApplication.php(282): BookController->run()
+#8 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /var/www/html/index.php(13): CWebApplication->run()
+REQUEST_URI=/book/
+in /var/www/html/protected/views/book/index.php (5)
+in /var/www/html/protected/controllers/BookController.php (14)
+in /var/www/html/index.php (13)
