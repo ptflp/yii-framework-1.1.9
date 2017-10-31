@@ -144,7 +144,11 @@ class PageController extends Controller
 		$criteria->condition = 'id <5';
 		$criteria->order = 'title ASC';
 		$dataProvider=new CActiveDataProvider('Page',
-			array('criteria' => $criteria)
+			array('criteria' => $criteria,
+				'pagination' => array (
+					'pageSize' => 1
+				)
+			)
 		);
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
