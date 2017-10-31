@@ -18,5 +18,6 @@ $this->menu=array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
 	'sorterHeader'=> 'Сортировать по:',
+	'summaryText' => '{start} - {end} из {count}',
 	'sortableAttributes' => array('title','id','text')
 )); ?>
