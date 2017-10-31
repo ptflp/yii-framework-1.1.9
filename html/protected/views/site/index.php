@@ -3,6 +3,10 @@
 
 $this->pageTitle=Yii::app()->name;
 $this->myVar='123';
+$this->breadcrumbs = array (
+	'моя категория' => array('site/contact'),
+	'статья' => array ('')
+)
 ?>
 
 <h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
