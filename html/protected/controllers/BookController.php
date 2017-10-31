@@ -12,7 +12,9 @@ class BookController extends Controller
 		$arr = Book::model()->find($criteria); //передача через array экранирует все символы
 		//echo $id;			
 		$a = Book::model()->findByPk($id);
-		$v = $this->render('index',array('model'=>$a),true);
+		$f='Переменная $f';
+		$D='Переменная $D';		
+		$v = $this->render('index',array('model'=>$a,'f'=>$f,'D'=>$D),true); //Передача переменных в View
 		echo $v;
 
 	}
