@@ -1,0 +1,9 @@
+2017/10/30 07:58:59 [error] [exception.ParseError] ParseError: syntax error, unexpected ':' in /var/www/html/protected/controllers/CustomerController.php:9
+Stack trace:
+#0 /var/www/framework/web/CWebApplication.php(276): CWebApplication->createController('')
+#1 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('Customer')
+#2 /var/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#3 /var/www/html/index.php(13): CApplication->run()
+#4 {main}
+REQUEST_URI=/index.php/Customer
+---
