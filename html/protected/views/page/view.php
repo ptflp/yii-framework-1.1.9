@@ -23,6 +23,9 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'title',
-		'text',
+		'text' => array(
+			'label' => 'Текст2', // Отображение в вьюхе таблицы
+			'value' => $model->text // value
+		)
 	),
 )); ?>
