@@ -141,7 +141,8 @@ class PageController extends Controller
 	public function actionIndex()
 	{
 		$criteria = new CDbCriteria;
-		$criteria->condition = 'id = 5';
+		$criteria->condition = 'id <5';
+		$criteria->order = 'title ASC';
 		$dataProvider=new CActiveDataProvider('Page',
 			array('criteria' => $criteria)
 		);
