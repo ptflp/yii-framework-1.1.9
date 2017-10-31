@@ -2127,3 +2127,242 @@ Stack trace:
 REQUEST_URI=/page/create
 HTTP_REFERER=http://localhost:8081/page
 ---
+2017/10/31 08:19:31 [error] [php] include(ussafe.php): failed to open stream: No such file or directory (/var/www/framework/YiiBase.php:432)
+Stack trace:
+#0 unknown(0): spl_autoload_call()
+#1 /var/www/framework/YiiBase.php(303): class_exists()
+#2 /var/www/framework/validators/CValidator.php(174): import()
+#3 /var/www/framework/base/CModel.php(287): createValidator()
+#4 /var/www/framework/base/CModel.php(260): Page->createValidators()
+#5 /var/www/framework/base/CModel.php(547): Page->getValidators()
+#6 /var/www/framework/base/CModel.php(468): Page->getSafeAttributeNames()
+#7 /var/www/framework/base/CComponent.php(152): Page->setAttributes()
+#8 /var/www/framework/db/ar/CActiveRecord.php(162): Page->__set()
+#9 /var/www/html/protected/controllers/PageController.php(86): Page->__set()
+#10 /var/www/framework/web/actions/CInlineAction.php(49): PageController->actionCreate()
+#11 /var/www/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /var/www/framework/web/filters/CFilterChain.php(134): PageController->runAction()
+#13 /var/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /var/www/framework/web/CController.php(1148): CAccessControlFilter->filter()
+#15 /var/www/framework/web/filters/CInlineFilter.php(58): PageController->filterAccessControl()
+#16 /var/www/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#17 /var/www/framework/web/CController.php(291): CFilterChain->run()
+#18 /var/www/framework/web/CController.php(265): PageController->runActionWithFilters()
+#19 /var/www/framework/web/CWebApplication.php(282): PageController->run()
+#20 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#21 /var/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#22 /var/www/html/index.php(13): CWebApplication->run()
+REQUEST_URI=/page/create
+in /var/www/html/protected/controllers/PageController.php (86)
+in /var/www/html/index.php (13)
+2017/10/31 08:19:56 [warning] [application] Не удалось присвоить небезопасный атрибут "text" класса "Page".
+in /var/www/html/protected/controllers/PageController.php (86)
+in /var/www/html/index.php (13)
+2017/10/31 08:19:56 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::execute(): SQLSTATE[HY000]: General error: 1364 Field 'text' doesn't have a default value. Выполнявшийся SQL-запрос: INSERT INTO `o_page` (`title`) VALUES (:yp0).
+in /var/www/html/protected/controllers/PageController.php (87)
+in /var/www/html/index.php (13)
+2017/10/31 08:19:56 [error] [exception.CDbException] CDbException: CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[HY000]: General error: 1364 Field 'text' doesn't have a default value. The SQL statement executed was: INSERT INTO `o_page` (`title`) VALUES (:yp0) in /var/www/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/framework/db/ar/CActiveRecord.php(1083): CDbCommand->execute()
+#1 /var/www/framework/db/ar/CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#2 /var/www/html/protected/controllers/PageController.php(87): CActiveRecord->save()
+#3 /var/www/framework/web/actions/CInlineAction.php(49): PageController->actionCreate()
+#4 /var/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 /var/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('page/create')
+#14 /var/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /var/www/html/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/page/create
+HTTP_REFERER=http://localhost:8081/page/create
+---
+2017/10/31 08:20:38 [warning] [application] Не удалось присвоить небезопасный атрибут "text" класса "Page".
+in /var/www/html/protected/controllers/PageController.php (86)
+in /var/www/html/index.php (13)
+2017/10/31 08:20:38 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::execute(): SQLSTATE[HY000]: General error: 1364 Field 'text' doesn't have a default value. Выполнявшийся SQL-запрос: INSERT INTO `o_page` (`title`) VALUES (:yp0).
+in /var/www/html/protected/controllers/PageController.php (87)
+in /var/www/html/index.php (13)
+2017/10/31 08:20:38 [error] [exception.CDbException] CDbException: CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[HY000]: General error: 1364 Field 'text' doesn't have a default value. The SQL statement executed was: INSERT INTO `o_page` (`title`) VALUES (:yp0) in /var/www/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/framework/db/ar/CActiveRecord.php(1083): CDbCommand->execute()
+#1 /var/www/framework/db/ar/CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#2 /var/www/html/protected/controllers/PageController.php(87): CActiveRecord->save()
+#3 /var/www/framework/web/actions/CInlineAction.php(49): PageController->actionCreate()
+#4 /var/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 /var/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('page/create')
+#14 /var/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /var/www/html/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/page/create
+HTTP_REFERER=http://localhost:8081/page/create
+---
+2017/10/31 08:21:02 [warning] [application] Не удалось присвоить небезопасный атрибут "text" класса "Page".
+in /var/www/html/protected/controllers/PageController.php (86)
+in /var/www/html/index.php (13)
+2017/10/31 08:21:02 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::execute(): SQLSTATE[HY000]: General error: 1364 Field 'text' doesn't have a default value. Выполнявшийся SQL-запрос: INSERT INTO `o_page` (`title`) VALUES (:yp0).
+in /var/www/html/protected/controllers/PageController.php (87)
+in /var/www/html/index.php (13)
+2017/10/31 08:21:02 [error] [exception.CDbException] CDbException: CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[HY000]: General error: 1364 Field 'text' doesn't have a default value. The SQL statement executed was: INSERT INTO `o_page` (`title`) VALUES (:yp0) in /var/www/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/framework/db/ar/CActiveRecord.php(1083): CDbCommand->execute()
+#1 /var/www/framework/db/ar/CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#2 /var/www/html/protected/controllers/PageController.php(87): CActiveRecord->save()
+#3 /var/www/framework/web/actions/CInlineAction.php(49): PageController->actionCreate()
+#4 /var/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 /var/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('page/create')
+#14 /var/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /var/www/html/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/page/create
+HTTP_REFERER=http://localhost:8081/page/create
+---
+2017/10/31 08:21:18 [warning] [application] Не удалось присвоить небезопасный атрибут "text" класса "Page".
+in /var/www/html/protected/controllers/PageController.php (86)
+in /var/www/html/index.php (13)
+2017/10/31 08:21:18 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::execute(): SQLSTATE[HY000]: General error: 1364 Field 'text' doesn't have a default value. Выполнявшийся SQL-запрос: INSERT INTO `o_page` (`title`) VALUES (:yp0).
+in /var/www/html/protected/controllers/PageController.php (87)
+in /var/www/html/index.php (13)
+2017/10/31 08:21:18 [error] [exception.CDbException] CDbException: CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[HY000]: General error: 1364 Field 'text' doesn't have a default value. The SQL statement executed was: INSERT INTO `o_page` (`title`) VALUES (:yp0) in /var/www/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/framework/db/ar/CActiveRecord.php(1083): CDbCommand->execute()
+#1 /var/www/framework/db/ar/CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#2 /var/www/html/protected/controllers/PageController.php(87): CActiveRecord->save()
+#3 /var/www/framework/web/actions/CInlineAction.php(49): PageController->actionCreate()
+#4 /var/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 /var/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('page/create')
+#14 /var/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /var/www/html/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/page/create
+HTTP_REFERER=http://localhost:8081/page/create
+---
+2017/10/31 08:22:18 [warning] [application] Не удалось присвоить небезопасный атрибут "text" класса "Page".
+in /var/www/html/protected/controllers/PageController.php (86)
+in /var/www/html/index.php (13)
+2017/10/31 08:22:18 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::execute(): SQLSTATE[HY000]: General error: 1364 Field 'text' doesn't have a default value. Выполнявшийся SQL-запрос: INSERT INTO `o_page` (`title`) VALUES (:yp0).
+in /var/www/html/protected/controllers/PageController.php (87)
+in /var/www/html/index.php (13)
+2017/10/31 08:22:18 [error] [exception.CDbException] CDbException: CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[HY000]: General error: 1364 Field 'text' doesn't have a default value. The SQL statement executed was: INSERT INTO `o_page` (`title`) VALUES (:yp0) in /var/www/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/framework/db/ar/CActiveRecord.php(1083): CDbCommand->execute()
+#1 /var/www/framework/db/ar/CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#2 /var/www/html/protected/controllers/PageController.php(87): CActiveRecord->save()
+#3 /var/www/framework/web/actions/CInlineAction.php(49): PageController->actionCreate()
+#4 /var/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 /var/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('page/create')
+#14 /var/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /var/www/html/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/page/create
+HTTP_REFERER=http://localhost:8081/page/create
+---
+2017/10/31 08:23:50 [warning] [application] Не удалось присвоить небезопасный атрибут "text" класса "Page".
+in /var/www/html/protected/controllers/PageController.php (86)
+in /var/www/html/index.php (13)
+2017/10/31 08:24:05 [warning] [application] Не удалось присвоить небезопасный атрибут "text" класса "Page".
+in /var/www/html/protected/controllers/PageController.php (86)
+in /var/www/html/index.php (13)
+2017/10/31 08:24:05 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::execute(): SQLSTATE[HY000]: General error: 1364 Field 'text' doesn't have a default value. Выполнявшийся SQL-запрос: INSERT INTO `o_page` (`title`) VALUES (:yp0).
+in /var/www/html/protected/controllers/PageController.php (87)
+in /var/www/html/index.php (13)
+2017/10/31 08:24:05 [error] [exception.CDbException] CDbException: CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[HY000]: General error: 1364 Field 'text' doesn't have a default value. The SQL statement executed was: INSERT INTO `o_page` (`title`) VALUES (:yp0) in /var/www/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/framework/db/ar/CActiveRecord.php(1083): CDbCommand->execute()
+#1 /var/www/framework/db/ar/CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#2 /var/www/html/protected/controllers/PageController.php(87): CActiveRecord->save()
+#3 /var/www/framework/web/actions/CInlineAction.php(49): PageController->actionCreate()
+#4 /var/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 /var/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('page/create')
+#14 /var/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /var/www/html/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/page/create
+HTTP_REFERER=http://localhost:8081/page/create
+---
+2017/10/31 08:24:22 [warning] [application] Не удалось присвоить небезопасный атрибут "text" класса "Page".
+in /var/www/html/protected/controllers/PageController.php (86)
+in /var/www/html/index.php (13)
+2017/10/31 08:24:25 [warning] [application] Не удалось присвоить небезопасный атрибут "text" класса "Page".
+in /var/www/html/protected/controllers/PageController.php (86)
+in /var/www/html/index.php (13)
+2017/10/31 08:24:28 [warning] [application] Не удалось присвоить небезопасный атрибут "text" класса "Page".
+in /var/www/html/protected/controllers/PageController.php (86)
+in /var/www/html/index.php (13)
+2017/10/31 08:24:30 [warning] [application] Не удалось присвоить небезопасный атрибут "text" класса "Page".
+in /var/www/html/protected/controllers/PageController.php (86)
+in /var/www/html/index.php (13)
+2017/10/31 08:24:42 [warning] [application] Не удалось присвоить небезопасный атрибут "text" класса "Page".
+in /var/www/html/protected/controllers/PageController.php (86)
+in /var/www/html/index.php (13)
+2017/10/31 08:24:42 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::execute(): SQLSTATE[HY000]: General error: 1364 Field 'text' doesn't have a default value. Выполнявшийся SQL-запрос: INSERT INTO `o_page` (`title`) VALUES (:yp0).
+in /var/www/html/protected/controllers/PageController.php (87)
+in /var/www/html/index.php (13)
+2017/10/31 08:24:42 [error] [exception.CDbException] CDbException: CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[HY000]: General error: 1364 Field 'text' doesn't have a default value. The SQL statement executed was: INSERT INTO `o_page` (`title`) VALUES (:yp0) in /var/www/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/framework/db/ar/CActiveRecord.php(1083): CDbCommand->execute()
+#1 /var/www/framework/db/ar/CActiveRecord.php(811): CActiveRecord->insert(NULL)
+#2 /var/www/html/protected/controllers/PageController.php(87): CActiveRecord->save()
+#3 /var/www/framework/web/actions/CInlineAction.php(49): PageController->actionCreate()
+#4 /var/www/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /var/www/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/framework/web/CController.php(1148): CFilter->filter(Object(CFilterChain))
+#8 /var/www/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /var/www/framework/web/CWebApplication.php(141): CWebApplication->runController('page/create')
+#14 /var/www/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /var/www/html/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/page/create
+HTTP_REFERER=http://localhost:8081/page/create
+---
