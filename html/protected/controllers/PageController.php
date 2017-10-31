@@ -83,6 +83,10 @@ class PageController extends Controller
 
 		if(isset($_POST['Page']))
 		{
+			echo '<pre>';
+			print_r($_POST);
+			echo '</pre>';
+			die();
 			$model->attributes=$_POST['Page'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
