@@ -28,6 +28,7 @@ class Page extends CActiveRecord
 		return array(
 			array('title, text', 'required'),
 			array('title', 'length', 'max'=>255),
+			array('title', 'compare', 'compareAttribute'=>'text'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, title, text', 'safe', 'on'=>'search'),
