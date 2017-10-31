@@ -28,11 +28,22 @@ class Page extends CActiveRecord
 		return array(
 			array('title, text', 'required'),
 			array('title', 'length', 'max'=>255),
-			array('title', 'compare', 'compareAttribute'=>'text', 'message'=>'Шел нахуй'),
-			// The following rule is used by search().
+			//array('title', 'compare', 'compareAttribute'=>'text', 'message'=>'Шел нахуй'),
+			array('title, text', 'valid'),			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, title, text', 'safe', 'on'=>'search'),
 		);
+	}
+
+	/**
+	 * @return array relational rules.
+	 */
+	public function valid($attributes,$params)
+	{
+		$a = $this->attributes;
+		if ($a != 1) {
+			$this->addError($attributes,'Своя валидация');
+		}
 	}
 
 	/**
