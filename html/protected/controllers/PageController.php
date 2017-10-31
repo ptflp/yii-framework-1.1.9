@@ -83,10 +83,6 @@ class PageController extends Controller
 
 		if(isset($_POST['Page']))
 		{
-			echo '<pre>';
-			print_r($_POST);
-			echo '</pre>';
-			die();
 			$model->attributes=$_POST['Page'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
@@ -141,12 +137,12 @@ class PageController extends Controller
 	public function actionIndex()
 	{
 		$criteria = new CDbCriteria;
-		$criteria->condition = 'id <5';
-		$criteria->order = 'title ASC';
+		$criteria->condition = 'id >1';
+		//$criteria->order = 'title ASC';
 		$dataProvider=new CActiveDataProvider('Page',
 			array('criteria' => $criteria,
 				'pagination' => array (
-					'pageSize' => 1
+					'pageSize' => 11
 				)
 			)
 		);
