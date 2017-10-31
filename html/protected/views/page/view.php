@@ -26,6 +26,12 @@ $this->menu=array(
 		'text' => array(
 			'label' => 'Текст2', // Отображение в вьюхе таблицы
 			'value' => $model->text // value
-		)
+		),
+		array (
+			'label'=>'City',
+			'type' => 'raw', // disactivate html escape tags, pasting code as is
+			'value' => CHtml::link(CHtml::encode($model->title),
+				array('city/view','id'=>$model->title)),
+		),
 	),
 )); ?>
