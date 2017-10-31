@@ -2,16 +2,17 @@
 
 class BookController extends Controller
 {
-	public function actionIndex()
+	public function actionIndex($id = false)
 	{		
-		echo 'CDbCriteria';
 		$criteria = new CDbCriteria;
 		$criteria->condition='id=7';
 		$criteria->order='id ASC';
 		$criteria->limit=10;
 		$num = 3;
 		$arr = Book::model()->find($criteria); //передача через array экранирует все символы
-		$this->render('index',array('model'=>$arr));
+		//echo $id;			
+		$a = Book::model()->findByPk($id);
+		$this->render('index',array('model'=>$a));
 	}
 	public function actionSql()
 	{
