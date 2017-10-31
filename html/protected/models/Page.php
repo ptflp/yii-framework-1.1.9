@@ -27,12 +27,12 @@ class Page extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('title', 'required'),
+			array('title', 'unique', 'on'=>'my'),
 			array('title', 'length', 'max'=>255),
 			//array('title', 'compare', 'compareAttribute'=>'text', 'message'=>'Шел нахуй'),
 			//array('title, text', 'valid'),			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, title, text', 'safe', 'on'=>'search'),
-			array('text', 'unsafe'),
 		);
 	}
 
