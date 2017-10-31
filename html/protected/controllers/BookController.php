@@ -12,7 +12,9 @@ class BookController extends Controller
 		$arr = Book::model()->find($criteria); //передача через array экранирует все символы
 		//echo $id;			
 		$a = Book::model()->findByPk($id);
-		$this->render('index',array('model'=>$a));
+		$v = $this->render('index',array('model'=>$a),true);
+		echo $v;
+
 	}
 	public function actionSql()
 	{
