@@ -5,6 +5,6 @@
 	echo CHtml::form('','POST');
 	echo CHtml::textField('text','valet');
 	$a=CHtml::listData($models,'id', 'title');
-	echo CHtml::dropDownList('drop','',$a);
+	echo CHtml::dropDownList('drop','',$a, array('class'=>'one'));
 	echo CHtml::submitButton('Отправка');
 	echo CHtml::endForm();
