@@ -27,7 +27,7 @@ class Page extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('title', 'required'),
-			array('title', 'unique', 'on'=>'my'),
+			array('title', 'numerical'),
 			array('title', 'length', 'max'=>255),
 			//array('title', 'compare', 'compareAttribute'=>'text', 'message'=>'Шел нахуй'),
 			//array('title, text', 'valid'),			// The following rule is used by search().
