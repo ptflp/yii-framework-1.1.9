@@ -2,7 +2,9 @@
 	echo '<pre>';
 	print_r($_POST);
 	echo '</pre>';
-	echo CHtml::form('/path','GET');
+	echo CHtml::form('','POST');
 	echo CHtml::textField('text','valet');
+	$a=CHtml::listData($models,'id', 'title');
+	echo CHtml::dropDownList('drop','',$a);
 	echo CHtml::submitButton('Отправка');
 	echo CHtml::endForm();
