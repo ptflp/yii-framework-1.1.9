@@ -45,7 +45,7 @@ $('.search-form form').submit(function(){
 			'name' => 'id',
 			'header' => 'Айди',
 			'headerHtmlOptions' => array('width' => 30),
-			'value' => '"Страница ".$data->id'
+			'value' => '"Страница ".$data->id' //php код в кавычках!
 		),
 		'title',
 		'text',
