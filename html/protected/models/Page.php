@@ -106,7 +106,7 @@ class Page extends CActiveRecord
 			'pagination'=> array(
 				'pageSize' => 3,
 			),
-			'sort' => $sort,
+			//'sort' => $sort,
 		));
 	}
 

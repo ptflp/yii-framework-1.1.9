@@ -41,6 +41,12 @@ $('.search-form form').submit(function(){
 	'dataProvider'=>$model->search(),
 	'filter'=>$model, // фильтр
 	'columns'=>array(  // какие колонки выводить
+		array(
+			'name' => 'id',
+			'header' => 'Айди',
+			'headerHtmlOptions' => array('width' => 30),
+			'value' => '"Страница ".$data->id'
+		),
 		'title',
 		'text',
 		array(
