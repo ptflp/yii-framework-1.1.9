@@ -39,9 +39,8 @@ $('.search-form form').submit(function(){
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'page-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'id',
+	'filter'=>$model, // фильтр
+	'columns'=>array(  // какие колонки выводить
 		'title',
 		'text',
 		array(
