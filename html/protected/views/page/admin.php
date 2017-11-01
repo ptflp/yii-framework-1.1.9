@@ -44,8 +44,10 @@ $('.search-form form').submit(function(){
 		array(
 			'name' => 'id',
 			'header' => 'Айди',
-			'headerHtmlOptions' => array('width' => 30),
-			'value' => '"Страница ".$data->id' //php код в кавычках!
+			'headerHtmlOptions' => array('width' => 160),
+			'value' => '"Страница ".$data->id',
+			'cssClassExpression' => '($data->id > 5)?"my":""',
+			'htmlOptions' => array ('class'=>'asfsa') //php код в кавычках!
 		),
 		'title',
 		'text',
