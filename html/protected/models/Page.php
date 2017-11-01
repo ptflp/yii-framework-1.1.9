@@ -105,7 +105,8 @@ class Page extends CActiveRecord
 			'criteria'=>$criteria,
 			'pagination'=> array(
 				'pageSize' => 3,
-			)
+			),
+			'sort' => $sort,
 		));
 	}
 
