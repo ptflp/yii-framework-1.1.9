@@ -42,6 +42,10 @@ $('.search-form form').submit(function(){
 	'filter'=>$model, // фильтр
 	'columns'=>array(  // какие колонки выводить
 		array(
+			'class' => 'CCheckBoxColumn',
+			'id' => 'checked'
+		),
+		array(
 			'name' => 'id',
 			'header' => 'Айди',
 			'headerHtmlOptions' => array('width' => 160),
