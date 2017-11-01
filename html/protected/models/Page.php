@@ -92,8 +92,20 @@ class Page extends CActiveRecord
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('text',$this->text,true);
 
+		$sort = new CSort;
+
+		$sort->attributes = array(
+			'title' => array (
+				'asc' => 'title',
+				'desc' => 'title desc'
+			)
+		);
+
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'pagination'=> array(
+				'pageSize' => 3,
+			)
 		));
 	}
 
