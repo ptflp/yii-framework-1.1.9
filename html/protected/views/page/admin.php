@@ -40,7 +40,12 @@ $('.search-form form').submit(function(){
 	'id'=>'page-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model, // фильтр
+	'selectableRows' => 2,
 	'columns'=>array(  // какие колонки выводить
+		array(
+			'class' => 'CCheckBoxColumn',
+			'id' => 'checked'
+		),
 		array(
 			'name' => 'id',
 			'header' => 'Айди',
