@@ -53,6 +53,7 @@ $('.search-form form').submit(function(){
 		'text',
 		array(
 			'class'=>'CButtonColumn',
+			'deleteButtonOptions' => array ('style' => 'display:none'),
 		),
 	),
 )); ?>
