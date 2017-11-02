@@ -93,4 +93,10 @@ class Category extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	public static function all()
+	{
+		$models = self::model()->findAll();
+		return CHtml::listData($models,'id','title');
+	}
 }

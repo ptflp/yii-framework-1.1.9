@@ -26,8 +26,14 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'category_id'); ?>
+		<?php echo $form->dropDownList($model,'category_id',Category::all()); ?>
+		<?php echo $form->error($model,'category_id'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'text'); ?>
-		<?php echo $form->textArea($model,'text',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textArea($model,'text'); ?>
 		<?php echo $form->error($model,'text'); ?>
 	</div>
 

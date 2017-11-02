@@ -26,7 +26,7 @@ class Page extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title', 'required'),
+			array('title, category_id, text', 'required'),
 			array('text', 'required'),
 			array('title', 'length', 'max'=>255),
 			//array('title', 'compare', 'compareAttribute'=>'text', 'message'=>'Шел нахуй'),
@@ -69,6 +69,7 @@ class Page extends CActiveRecord
 			'title' => 'Заголовок',
 			'text' => 'Текст',
 			'category' => 'Категория',
+			'category_id' => 'Категория',
 			'description' => 'Описание'
 		);
 	}
@@ -122,5 +123,10 @@ class Page extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+	public function beforeSave()
+	{
+		$this->title = $this->title.'_______Приставка';
+		return parent::beforeSave();
 	}
 }
