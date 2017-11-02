@@ -13,5 +13,13 @@
 	<?php echo CHtml::encode($data->title); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('pages')); ?>:</b>
+	<?php foreach ($data->pages as $one) {
+		echo '<br>';
+		echo CHtml::link(CHtml::encode($one->title), array('page/view', 'id' => $one->id));
+	} 
+	?>
+	<br />
+
 
 </div>

@@ -41,6 +41,7 @@ class Category extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'pages' => array(self::HAS_MANY, 'PAGE', 'category_id'),
 		);
 	}
 
@@ -51,7 +52,8 @@ class Category extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
+			'title' => 'Заголовк',
+			'pages' => 'Страницы'
 		);
 	}
 

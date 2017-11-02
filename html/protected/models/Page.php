@@ -68,6 +68,8 @@ class Page extends CActiveRecord
 			'id' => 'ID',
 			'title' => 'Заголовок',
 			'text' => 'Текст',
+			'category' => 'Категория',
+			'description' => 'Описание'
 		);
 	}
 
