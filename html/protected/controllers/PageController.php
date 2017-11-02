@@ -137,10 +137,11 @@ class PageController extends Controller
 	public function actionIndex()
 	{
 		$criteria = new CDbCriteria;
-		$criteria->condition = 'id >1';
+		//$criteria->condition = 'id >1';
 		//$criteria->order = 'title ASC';
 		$dataProvider=new CActiveDataProvider('Page',
-			array('criteria' => $criteria,
+			array(
+				//'criteria' => $criteria,
 				'pagination' => array (
 					'pageSize' => 11
 				)
