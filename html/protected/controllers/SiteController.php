@@ -29,6 +29,12 @@ class SiteController extends Controller
 	public function actionIndex()
 	{
 		$connection = Yii::app()->db2;
+		$sql ='INSERT INTO {{page}} (`id`,`title`,`text`) VALUES (1, `title`, `text`)';
+		$command = $connection->createCommand($sql);
+		$c = $command->execute(); // INSERT DELETE UPDATE только эти операции
+		if ($c) {
+			echo 'yes';
+		}
 		//echo Str::strOut('1111');
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
