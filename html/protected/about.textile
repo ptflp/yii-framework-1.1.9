@@ -1,0 +1,28 @@
+Цель - создать учебную цмс
+Функции:
+
+Хранение и показ статей и новостей
+Комментирование статей и новостей
+Админка
+
+Объекты:
+
+Страницы сайта.
+
+id, title, Content, Created, Status , id_category
+
+Категории страниц
+
+id, title
+
+Комментарии 
+
+id, Page_id, Created, User_id, Guest, Status
+
+Пользователи.
+
+id, Username, Password, Created, Role
+
+Настрйки 
+
+Comment_status, Registration_status
