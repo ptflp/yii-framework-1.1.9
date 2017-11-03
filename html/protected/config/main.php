@@ -55,7 +55,7 @@ return array(
 		'db'=>require(dirname(__FILE__).'/database.php'),
 
 		'db2'=>array(
-			'class' => 'system.dbCDbConnection',
+			'class' => 'system.db.CDbConnection',
 			'connectionString' => 'mysql:host=yiidb;dbname=yiidb',
 			'emulatePrepare' => true,
 			'username' => 'root',
