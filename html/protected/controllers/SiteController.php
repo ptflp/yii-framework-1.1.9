@@ -29,7 +29,7 @@ class SiteController extends Controller
 	public function actionIndex()
 	{
 		$connection = Yii::app()->db2;
-		$sql ='INSERT INTO {{page}} (`id`,`title`,`text`) VALUES (1, `title`, `text`)';
+		$sql ='INSERT INTO {{page}} (`id`,`title`,`text`) VALUES (100, `title`, `text`)';
 		$command = $connection->createCommand($sql);
 		$c = $command->execute(); // INSERT DELETE UPDATE только эти операции
 		if ($c) {
