@@ -54,6 +54,16 @@ return array(
 		// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),
 
+		'db2'=>array(
+			'class' => 'system.dbCDbConnection',
+			'connectionString' => 'mysql:host=yiidb;dbname=yiidb',
+			'emulatePrepare' => true,
+			'username' => 'root',
+			'password' => 'root',
+			'charset' => 'utf8',
+			'tablePrefix'=>'o_'
+		),
+
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>YII_DEBUG ? null : 'site/error',
