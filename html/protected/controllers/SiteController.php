@@ -32,13 +32,17 @@ class SiteController extends Controller
 		$sql ='SELECT * FROM {{page}}';
 		$command = $connection->createCommand($sql);
 		//$c = $command->execute(); // INSERT DELETE UPDATE только эти операции
-		$c = $command->queryAll(); // INSERT DELETE UPDATE только эти операции
+		//$c = $command->queryAll(); // вывод всех результатов
+		/*
 		foreach ($c as $one) {
 			echo $one['title'],'<br>';
 		}
 		if ($c) {
 			echo 'yes';
 		}
+*/
+		$c = $command->queryRow(); // вывод только одной строки
+		echo $c['id'];
 		//echo Str::strOut('1111');
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
